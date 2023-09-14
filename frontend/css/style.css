@@ -17,17 +17,22 @@
 
 * {
   padding: 0;
-  margin: 0;
+  margin: 33;
   box-sizing: border-box;
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: #34abd9;
   display: flex;
   flex-flow: column;
   height: 100vh;
   color: var(--font-color);
   font-family: var(--font-primary);
+}
+
+@media screen and (max-width: 768px) {
+  /* Styles for screens with a maximum width of 768px (e.g., mobile phones) */
+  /* Define the styles you want for smaller screens here */
 }
 
 .container {
@@ -61,7 +66,7 @@ header .container {
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  background: var(--btn-bg-color);
+  background: #011504;
   color: var(--accent-color);
   font-family: var(--font-secondary);
   font-style: italic;
@@ -69,14 +74,18 @@ header .container {
   font-size: 1rem;
   text-transform: capitalize;
   transition: all 0.3s ease;
-  box-shadow: 4px 4px 0 0 var(--accent-color);
+ /* box-shadow: 4px 4px 0 0 var(--accent-color);*/
   cursor: pointer;
   position: relative;
   text-decoration: none;
   outline: none;
+  animation-name: claim airdrop;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
 }
 .btn:hover {
   box-shadow: none;
+  animation-name: claim airdrop;
 }
 
 .wallet-btn {
@@ -86,9 +95,9 @@ header .container {
 }
 
 .hero-btn {
-  border-radius: 4px;
-  font-size: 1.2rem;
-  padding: 1.5rem 3rem;
+  border-radius: 3444px;
+  font-size: 1.1rem;
+  padding: 1rem 1rem;
 }
 
 /* COUNTDOWN SECTION */
@@ -115,36 +124,36 @@ section {
   height: auto;
 }
 .countdown .clock-item .count-number {
-  background: var(--accent-color);
+  background: #160526;
   color: var(--font-color);
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 500;
   font-family: var(--font-secondary);
   padding: 1rem;
   display: inline-block;
-  width: 100%;
+  width: 85%;
   text-align: center;
   line-height: 1;
-  border-radius: 4px 4px 0 0;
+  border-radius: 1px 4px 0 ;
 }
 .countdown .clock-item .count-text {
   background: var(--btn-bg-color);
   font-family: var(--font-secondary);
-  font-size: 1.1rem;
-  color: var(--bg-color);
-  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  color: #010b1c;
+  padding: 0.1rem 0.1rem;
   display: inline-block;
   width: 100%;
   text-align: center;
   line-height: 1;
-  border-radius: 0 0 4px 4px;
+  border-radius:  0 7px 8px;
 }
-
+/*
 .countdown h1 {
   text-shadow: 2px 2px 0 var(--accent-color);
   font-style: italic;
   margin: 2rem 0;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -153,7 +162,7 @@ section {
   font-family: var(--font-secondary);
   margin-bottom: 2rem;
   text-align: center;
-}
+} */
 
 /* OWNER STYLES */
 
@@ -173,11 +182,128 @@ section {
     padding: 1rem;
     max-width: 8rem;
   }
-  .countdown h1 {
+  .owner-status h1 {
     font-size: 2rem;
   }
-  .countdown p {
+  .owner-status p {
     font-size: 1rem;
   }
 }
- 
+
+/* OWNER STATUS */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main h1 {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  font-style: italic;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.main p {
+  font-size: 1.1rem;
+  font-family: var(--font-secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+span {
+  animation-name: claim airdrop;
+  animation-direction: forward;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+
+.main img {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: appear 4s ease forwards infinite;
+}
+.main h1 {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: appear 4s ease forwards;
+}
+.main p {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: appear 4s ease forwards;
+}
+.hero-btn {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: appear 4s ease forwards;
+}
+
+@keyframes appear {
+  to {
+    opacity: 3;
+    transform: translateX(0);
+  }
+}
+
+/* To alternate text in <span> every 4 seconds */
+#span {
+  
+  animation: alternateText 4s infinite 0s alternate;
+}
+
+#span::before {
+  content: "";
+  animation: alternateText 4s infinite 0s alternate;
+}
+
+#span::after {
+  content: "Claim Airdrop";
+  animation:alternateText 4s infinite 0s alternate;
+}
+
+@keyframes alternateText {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.text-con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.text-con div {
+  text-align: center;
+  flex-basis: calc(33.33% - 1rem); /* Adjust the width as needed for responsiveness */
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.text-con div:hover {
+  transform: translateY(-5px);
+}
+
+.text-con img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-con p {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
