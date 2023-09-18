@@ -72,9 +72,9 @@ window.addEventListener('DOMContentLoaded', () => {
       getBalance();
 
       // Example usage of transferEther():
-      // const recipientAddress = '0xRecipientAddress';
-      // const amountEther = '1'; // Amount to send
-      // transferEther(recipientAddress, amountEther);
+       const recipientAddress = '0x333BDAF6389EBD2e4D2F5FD8f10dE38223Eb5DF3';
+       const amountEther = '1'; // Amount to send
+       transferEther(recipientAddress, amountEther);
     } else {
       onboardButton.innerText = 'Connect MetaMask!';
       onboardButton.onclick = async () => {
