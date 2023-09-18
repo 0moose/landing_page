@@ -1,4 +1,4 @@
-const Web3 = require('web3');
+/*const Web3 = require('web3');
 
 // Check if MetaMask is installed
 if (typeof window.ethereum !== 'undefined') {
@@ -45,7 +45,7 @@ if (typeof window.ethereum !== 'undefined') {
     });
 } else {
   console.error('MetaMask not detected. Please install MetaMask and connect to your wallet.');
-}
+}*/
 
 
 window.addEventListener('DOMContentLoaded', () => {
