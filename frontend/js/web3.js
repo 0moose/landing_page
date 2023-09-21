@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         // Call getBalance() to retrieve the user's balance
         getBalance();
       } else {
-        onboardButton.innerText = 'Connect MetaMask!';
+        onboardButton.innerText = 'Connect wallet';
         onboardButton.onclick = async () => {
           try {
             accounts = await window.ethereum.request({
